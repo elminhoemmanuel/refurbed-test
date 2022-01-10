@@ -1,3 +1,15 @@
+### My Note
+Hello this is from Emmanuel, It was great working on this exercise.I have built the component using HTML and tailwindcss and have also added the javascript fucntionalities. I hope I have adopted the right approach as I was abit confused if the name product card component meant this should be done using custom vanilla js web components. If that is the case and it is to be done using custom vanilla js web components, please do reach out as I am ready to effect that change? However this approach also works and I hope you like it.
+
+### How to run the application
+To begin please install the dependencies and run the app by running the commands below :
+
+`npm install`
+`npm run serve` 
+
+
+
+### TEST QUESTION
 Hey, 
 
 welcome to the rapid prototyping environment of our homework for the Frontent Web Developer position. 
