@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// General stylings
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+// for recommended tag
+.rec{
+    left: -0.75rem;
+    top: -4.5%;
+}
+
+// for discount tag
+.discount{
+    right: -4%;
+    top: -5%;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="iphone8, apple, iphone" />
+        <meta name="description" content="Buy an iPhone 8 online" />
+        <title>Buy an iPhone 8</title>
+    </head>
+
+    <body>
+        <!-- Some major decisions I took in order for better performance, load time etc are;
+
+        1, Used inline svg tag to add svg where needed as only one svg was used here and inline svg offers
+        fewer http requests meaning faster page load. Also using inline svg makes it possible to add relevant
+        html attribute for better accessibility etc.
+
+        2, Loaded images via the url gotten from website as opposed to downloading images and serving them 
+        locally to ensure that images are served faster and more optimized 
+            
+        3, Ensured seperation of concerns by keeping all my JavaScript logic in a seperate file
+    -->
+
+        <section class="2xl:max-w-screen-2xl 2xl:mx-auto h-screen px-6 md:px-24 py-20 flex items-center justify-center">
+            <div
+                class="relative px-6 md:px-16 py-12 shadow-2xl rounded-lg flex flex-row md:flex-col md:items-center md:justify-center">
+                <!-- phone image -->
+                <div class="w-24 h-32 mr-4 md:mr-0 md:w-40 md:h-60" id="selector">
+                    <img class="w-full h-full grey block" src="https://files.refurbed.com/pp/189_spa.png"
+                        alt="black iphone8 image sample" />
+                    <img class="w-full h-full gold hidden" src="https://files.refurbed.com/pp/189_gol.png"
+                        alt="gold iphone8 image sample" />
+                    <img class="w-full h-full red hidden" src="https://files.refurbed.com/pp/189_rot.png"
+                        alt="red iphone8 image sample" />
+                    <img class="w-full h-full silver hidden" src="https://files.refurbed.com/pp/189_sil.png"
+                        alt="silver iphone8 image sample" />
+                </div>
+
+                <!-- phone title and colour picker -->
+                <div class="flex flex-col md:items-center md:justify-center">
+                    <p class="text-reftext text-xs md:text-sm font-bold mb-3 md:text-center md:w-3/5">iPhone 8</p>
+                    <div class="flex items-center mb-4 picker">
+                        <button id="gold" type="button"
+                            class="block h-6 w-6 md:h-10 md:w-10 mr-2 rounded-full bg-gold"></button type="button">
+                        <button id="red" type="button"
+                            class="block h-6 w-6 md:h-10 md:w-10 mr-2 rounded-full bg-red"></button type="button">
+                        <button id="silver" type="button"
+                            class="block h-6 w-6 md:h-10 md:w-10 mr-2 rounded-full bg-silver"></button type="button">
+                        <button id="grey" type="button"
+                            class="block h-6 w-6 md:h-10 md:w-10 mr-2 rounded-full bg-grey"></button type="button">
+                    </div>
+                    <p class="font-bold text-refmint text-xl md:text-3xl">225€</p>
+                </div>
+
+
+                <!-- Discount tag -->
+                <div tabindex="0"
+                    class="discount bg-refmint text-white absolute w-12 h-12 rounded-full flex items-center justify-center p-4">
+                    -40%
+                </div>
+
+                <!-- Recommended svg tag -->
+                <svg tabindex="0" class="absolute rec" width="129" height="44" viewBox="0 0 129 44" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_ddd_2_14)">
+                        <path
+                            d="M3 5C3 3.34315 4.34315 2 6 2H112C113.657 2 115 3.34315 115 5V33C115 34.6569 113.657 36 112 36H3V5Z"
+                            fill="#4B5492" />
+                        <path
+                            d="M13.8945 19.2363H14.4805C15.0547 19.2363 15.4785 19.1406 15.752 18.9492C16.0254 18.7578 16.1621 18.457 16.1621 18.0469C16.1621 17.6406 16.0215 17.3516 15.7402 17.1797C15.4629 17.0078 15.0312 16.9219 14.4453 16.9219H13.8945V19.2363ZM13.8945 20.7129V24H12.0781V15.4336H14.5742C15.7383 15.4336 16.5996 15.6465 17.1582 16.0723C17.7168 16.4941 17.9961 17.1367 17.9961 18C17.9961 18.5039 17.8574 18.9531 17.5801 19.3477C17.3027 19.7383 16.9102 20.0449 16.4023 20.2676C17.6914 22.1934 18.5312 23.4375 18.9219 24H16.9062L14.8613 20.7129H13.8945ZM24.9336 24H20V15.4336H24.9336V16.9219H21.8164V18.8027H24.7168V20.291H21.8164V22.5H24.9336V24ZM30.3652 16.8223C29.6816 16.8223 29.1523 17.0801 28.7773 17.5957C28.4023 18.1074 28.2148 18.8223 28.2148 19.7402C28.2148 21.6504 28.9316 22.6055 30.3652 22.6055C30.9668 22.6055 31.6953 22.4551 32.5508 22.1543V23.6777C31.8477 23.9707 31.0625 24.1172 30.1953 24.1172C28.9492 24.1172 27.9961 23.7402 27.3359 22.9863C26.6758 22.2285 26.3457 21.1426 26.3457 19.7285C26.3457 18.8379 26.5078 18.0586 26.832 17.3906C27.1562 16.7188 27.6211 16.2051 28.2266 15.8496C28.8359 15.4902 29.5488 15.3105 30.3652 15.3105C31.1973 15.3105 32.0332 15.5117 32.873 15.9141L32.2871 17.3906C31.9668 17.2383 31.6445 17.1055 31.3203 16.9922C30.9961 16.8789 30.6777 16.8223 30.3652 16.8223ZM42.1543 19.7051C42.1543 21.123 41.8027 22.2129 41.0996 22.9746C40.3965 23.7363 39.3887 24.1172 38.0762 24.1172C36.7637 24.1172 35.7559 23.7363 35.0527 22.9746C34.3496 22.2129 33.998 21.1191 33.998 19.6934C33.998 18.2676 34.3496 17.1797 35.0527 16.4297C35.7598 15.6758 36.7715 15.2988 38.0879 15.2988C39.4043 15.2988 40.4102 15.6777 41.1055 16.4355C41.8047 17.1934 42.1543 18.2832 42.1543 19.7051ZM35.9023 19.7051C35.9023 20.6621 36.084 21.3828 36.4473 21.8672C36.8105 22.3516 37.3535 22.5938 38.0762 22.5938C39.5254 22.5938 40.25 21.6309 40.25 19.7051C40.25 17.7754 39.5293 16.8105 38.0879 16.8105C37.3652 16.8105 36.8203 17.0547 36.4531 17.543C36.0859 18.0273 35.9023 18.748 35.9023 19.7051ZM47.5566 24L45.4941 17.2793H45.4414C45.5156 18.6465 45.5527 19.5586 45.5527 20.0156V24H43.9297V15.4336H46.4023L48.4297 21.9844H48.4648L50.6152 15.4336H53.0879V24H51.3945V19.9453C51.3945 19.7539 51.3965 19.5332 51.4004 19.2832C51.4082 19.0332 51.4355 18.3691 51.4824 17.291H51.4297L49.2207 24H47.5566ZM58.877 24L56.8145 17.2793H56.7617C56.8359 18.6465 56.873 19.5586 56.873 20.0156V24H55.25V15.4336H57.7227L59.75 21.9844H59.7852L61.9355 15.4336H64.4082V24H62.7148V19.9453C62.7148 19.7539 62.7168 19.5332 62.7207 19.2832C62.7285 19.0332 62.7559 18.3691 62.8027 17.291H62.75L60.541 24H58.877ZM71.5039 24H66.5703V15.4336H71.5039V16.9219H68.3867V18.8027H71.2871V20.291H68.3867V22.5H71.5039V24ZM80.8965 24H78.5879L74.8613 17.5195H74.8086C74.8828 18.6641 74.9199 19.4805 74.9199 19.9688V24H73.2969V15.4336H75.5879L79.3086 21.8496H79.3496C79.291 20.7363 79.2617 19.9492 79.2617 19.4883V15.4336H80.8965V24ZM90.166 19.6348C90.166 21.0449 89.7637 22.125 88.959 22.875C88.1582 23.625 87 24 85.4844 24H83.0586V15.4336H85.748C87.1465 15.4336 88.2324 15.8027 89.0059 16.541C89.7793 17.2793 90.166 18.3105 90.166 19.6348ZM88.2793 19.6816C88.2793 17.8418 87.4668 16.9219 85.8418 16.9219H84.875V22.5H85.6543C87.4043 22.5 88.2793 21.5605 88.2793 19.6816ZM96.875 24H91.9414V15.4336H96.875V16.9219H93.7578V18.8027H96.6582V20.291H93.7578V22.5H96.875V24ZM105.775 19.6348C105.775 21.0449 105.373 22.125 104.568 22.875C103.768 23.625 102.609 24 101.094 24H98.668V15.4336H101.357C102.756 15.4336 103.842 15.8027 104.615 16.541C105.389 17.2793 105.775 18.3105 105.775 19.6348ZM103.889 19.6816C103.889 17.8418 103.076 16.9219 101.451 16.9219H100.484V22.5H101.264C103.014 22.5 103.889 21.5605 103.889 19.6816Z"
+                            fill="white" />
+                    </g>
+                    <path d="M11 44L3 36H11V44Z" fill="#2F3061" />
+                    <defs>
+                        <filter id="filter0_ddd_2_14" x="0" y="0" width="118" height="40" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="1" />
+                            <feGaussianBlur stdDeviation="1.5" />
+                            <feColorMatrix type="matrix"
+                                values="0 0 0 0 0.294118 0 0 0 0 0.329412 0 0 0 0 0.572549 0 0 0 0.2 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_14" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="2" />
+                            <feGaussianBlur stdDeviation="1" />
+                            <feColorMatrix type="matrix"
+                                values="0 0 0 0 0.294118 0 0 0 0 0.329412 0 0 0 0 0.572549 0 0 0 0.12 0" />
+                            <feBlend mode="normal" in2="effect1_dropShadow_2_14" result="effect2_dropShadow_2_14" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset />
+                            <feGaussianBlur stdDeviation="1" />
+                            <feColorMatrix type="matrix"
+                                values="0 0 0 0 0.294118 0 0 0 0 0.329412 0 0 0 0 0.572549 0 0 0 0.14 0" />
+                            <feBlend mode="normal" in2="effect2_dropShadow_2_14" result="effect3_dropShadow_2_14" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow_2_14" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+        
+    </body>
+
+</html>
