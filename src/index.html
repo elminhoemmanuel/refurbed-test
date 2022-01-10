@@ -13,13 +13,19 @@
         <!-- Some major decisions I took in order for better performance, load time etc are;
 
         1, Used inline svg tag to add svg where needed as only one svg was used here and inline svg offers
-        fewer http requests meaning faster page load. Also using inline svg makes it possible to add relevant
-        html attribute for better accessibility etc.
+        fewer http requests meaning faster page load as opposed to loading it from a seperate file using img tag
+        whih is best suited when there are many svg's. Also using inline svg makes it possible to add relevant
+        html attributes for better accessibility etc.
 
         2, Loaded images via the url gotten from website as opposed to downloading images and serving them 
         locally to ensure that images are served faster and more optimized 
             
         3, Ensured seperation of concerns by keeping all my JavaScript logic in a seperate file
+
+        4, Added tabindex attribute to important parts of the component like the recommended tag and the
+        dicsount tag which are normally not tabable for better accessibility.
+
+        5, Added relevant title, description and keywords for improved SEO
     -->
 
         <section class="2xl:max-w-screen-2xl 2xl:mx-auto h-screen px-6 md:px-24 py-20 flex items-center justify-center">
@@ -103,7 +109,7 @@
                 </svg>
             </div>
         </section>
-        
+
     </body>
 
 </html>
